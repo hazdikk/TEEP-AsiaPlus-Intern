@@ -1,0 +1,1 @@
+Simple website for transaction purposes using truffle framework

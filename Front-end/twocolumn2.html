@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>NTUST × 空間租借</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+
+
+        <SCRIPT language="JavaScript">
+        <!--
+            function processFormData()
+            {
+    
+                const deviceName = document.getElementById("deviceName").value;
+                const companyName = document.getElementById("companyName").value;
+                const location = document.getElementById("location").value;
+                const spaceName = document.getElementById("spaceName").value;
+                const providerName = document.getElementById("providerName").value;
+                const DeviceID = document.getElementById("DeviceID").value;
+                const Ether = document.getElementById("Ether").value;
+
+                window.alert("設備名稱： " + deviceName + "\n公司名稱： " + companyName + "\nDeviceID： "+ DeviceID + "\n地點： "
+                    + location + "\n空間名稱： " + spaceName + "\n提供者姓名： " + providerName 
+                    + '\nEther： ' + Ether);
+
+
+                window.alert('確認無誤後將會送出');
+                document.getElementById("deviceName").value = "";
+                document.getElementById("companyName").value = "";
+                document.getElementById("location").value = "";
+                document.getElementById("spaceName").value = "";
+                document.getElementById("providerName").value = "";
+                document.getElementById("DeviceID").value = "";
+                document.getElementById("Ether").value = "";
+                window.alert('成功新增設備');
+                
+                
+            }
+
+
+
+        //-->
+        </SCRIPT>
+	</head>
+	<body>
+
+		<!-- Header -->
+		<div >
+		
+        	<div id="header" class="container">
+            
+            	<div id="logo"><h1><a href="#">NTUST × 空間租借</a></h1></div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="twocolumn1.html">search</a></li>
+                        <li class="current_page_item"><a href="twocolumn2.html">device</a></li>
+                        <li><a href="onecolumn.html">space</a></li>
+                        <li><a href="">登入</a></li>
+                    </ul>
+                </nav>
+                
+            </div>
+
+		</div>
+		<!-- Header Ends Here -->
+
+		<!-- Page -->
+        
+        	<div id="page" style="background-image:url(images/background11.jpg);background-size: contain;background-position:465px;">
+            	<div class="container">
+                	<div class="row">
+                    
+                    	<div id="sidebar" class="4u">
+                        	
+                            <div class="row" style="position:relative;left:320px">
+                                <section>
+                                    <h2 style="color:black">Please fill in your information</h2>
+                                    <ul class="style4">
+                                        <li class="first" style="font-size:15px">User Name</li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp; <input style="padding: 11px;height:20px;width:90%;border-top:0px;border-left:0px; border-right:0px ;" type="text" id="providerName" name="providerName" placeholder="請輸入提供者姓名"><br>
+
+                                        <li style="font-size:15px">Device Name </li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp; <input style="padding: 11px;height:20px;width:90%;border-top:0px;border-left:0px; border-right:0px ;" type="text" id="deviceName" name="deviceName" placeholder="請輸入設備名稱"><br>
+                                        
+                                         <li style="font-size:15px">Device ID </li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp; <input style="padding: 11px;height:20px;width:90%;border-top:0px;border-left:0px; border-right:0px ;" type="text" id="DeviceID" name="DeviceID" placeholder="請輸入Device ID"><br>
+
+                                        <li style="font-size:15px">Company Name </li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp; <input style="padding: 11px;height:20px;width:90%;border-top:0px;border-left:0px; border-right:0px ;" type="text" id="companyName" name="companyName" placeholder="請輸入公司名稱"><br>
+
+                                        <li style="font-size:15px">Location </li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp; <input style="padding: 11px;height:20px;width:90%;border-top:0px;border-left:0px; border-right:0px ;" type="text" id="location" name="location" placeholder="請輸入地點"><br>
+
+                                        <li style="font-size:15px">Space Name </li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp; <input style="padding: 11px;height:20px;width:90%;border-top:0px;border-left:0px; border-right:0px ;" type="text" id="spaceName" name="spaceName" placeholder="請輸入空間名稱"><br>
+                                        
+                                        <li style="font-size:15px">Ether </li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp; <input style="padding: 11px;height:20px;width:90%;border-top:0px;border-left:0px; border-right:0px ;" type="text" id="Ether" name="Ether" placeholder="請輸入Ether"><br>
+
+                                        <li></li>
+                                        <input style="position:absolute;left:450px" type='button' name='submit' value='Send' onclick='processFormData();' />
+
+                                    </ul>
+                                </section>
+                            </div>
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+		<!-- /Page -->
+
+		<!-- Copyright -->
+            <div id="copyright" class="container">
+               weilingpan2019
+            </div>
+
+
+	</body>
+</html>

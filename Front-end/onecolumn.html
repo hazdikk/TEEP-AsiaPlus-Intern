@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>NTUST × 空間租借</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+
+
+        <SCRIPT language="JavaScript">
+        <!--
+            function processFormData()
+            {
+    
+                const location = document.getElementById("location").value;
+                const spacename = document.getElementById("spacename").value;
+                const firstname = document.getElementById("firstname").value;
+                const lastname = document.getElementById("lastname").value;
+
+                const suitablepeople = document.getElementById("suitablepeople").value;
+
+                var obj=document.getElementsByName("type");
+                var selected=[];
+                for (var i=0; i<obj.length; i++) {
+                    if (obj[i].checked) {
+                      selected.push(obj[i].value);
+                      }
+                    }
+                const spaceType = selected.join();
+
+                var e = document.getElementById("openTime");
+                var openTime = e.options[e.selectedIndex].value;
+                var e = document.getElementById("closeTime");
+                var closeTime = e.options[e.selectedIndex].value;
+
+                const Ether = document.getElementById("Ether").value;
+
+                window.alert("您輸入的地址是: " +location + "\n空間名稱為: " + spacename
+                    + "\n空間擁有者是: " + firstname + ',' + lastname + "\n空間類別為: " + spaceType
+                    + "\n可容納的成員數： "+ suitablepeople + "\n開始時間: " + openTime + "\n結束時間: " + closeTime
+                    + "\nEther: " + Ether);
+
+
+                window.alert('確認無誤後將會送出');
+                document.getElementById("location").value = "";
+                document.getElementById("spacename").value = "";
+                document.getElementById("firstname").value = "";
+                document.getElementById("lastname").value = "";
+                $("input[name='type").prop("checked",false);
+                document.getElementById("openTime")[0].selected=true;
+                document.getElementById("closeTime")[1].selected=true;
+                document.getElementById("suitablepeople").value = "";
+                document.getElementById("Ether").value = "";
+                window.alert('成功新增空間');
+                
+            }
+
+            function chk(input)
+              {
+                for(var i=0;i<document.form.type.length;i++)
+                {
+                  document.form.type[i].checked = false;
+                }
+                
+                input.checked = true;
+                return true;
+              }
+
+
+        //-->
+        </SCRIPT>
+
+	</head>
+	<body>
+
+		<!-- Header -->
+		<div >
+		
+        	<div id="header" class="container">
+            
+            	<div id="logo"><h1><a href="#">NTUST × 空間租借</a></h1></div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="twocolumn1.html">search</a></li>
+                        <li><a href="twocolumn2.html">device</a></li>
+                        <li class="current_page_item"><a href="onecolumn.html">space</a></li>
+                        <li><a href="">登入</a></li>
+                    </ul>
+                </nav>
+                
+            </div>
+
+		</div>
+		<!-- Header Ends Here -->
+
+		<!-- Page -->
+
+        	<div id="page" style="background-image:url(images/background9.jpg);background-size: contain;background-position:140px;"> 
+                <!-- style="background-image:url(images/background8.jpg);background-position:45px 175px;" -->
+               
+            	<div class="container">
+                	<div class="row">
+                    
+                    	<div id="content" class="12u skel-cell-important" style="position:relative;left:100px">
+                        	<header>
+                                <br><br><br>
+                                <h2 class="main-title" style="color:black">Please fill in your information</h2>
+
+                            </header>
+                                
+                                <!-- action="test.php" method="post" 
+                                action="javascript:alert('Submitted');"  -->
+                            <form name='form' id='form'>
+                                <label style="width:100px;display:inline-block;color:black;font-size:16px">User Name</label>
+                                <input style="width:85px;" type="text" id="firstname" name="firstname" placeholder="firstname">
+                                &nbsp;&nbsp;<input class="input" style="width:85px;" type="text" id="lastname" name="lastname" placeholder="lastname"><br><br>
+
+                                <label style="width:100px;display:inline-block;color:black;font-size:16px">Location </label>
+                                <input style="width:20%;" type="text" id="location" name="location" placeholder="請輸入詳細地址"><br><br>
+
+                                <label style="width:100px;display:inline-block;color:black;font-size:16px">Space Name </label>
+                                <input style="width:180px; type="text" id="spacename" name="spacename" placeholder="請輸入空間名稱"><br><br>
+                                
+                                
+
+
+                                <label style="width:95px;display:inline-block;color:black;font-size:16px">Space Type</label>
+                                <input type="checkbox" value="Meeting Room" id="type" name="type" onclick="return chk(this);"><label style="color:black;">Meeting Room</label>
+                                <input type="checkbox" value="Workshop" id="type" name="type" onclick="return chk(this);"><label style="color:black;">Workshop</label>
+                                <input type="checkbox" value="Working Space" id="type" name="type" onclick="return chk(this);"> <label style="color:black;">Working Space</label> <br><br>
+                                
+                                <label style="width:230px;display:inline-block;color:black;font-size:16px">How many people is suitable?</label>
+                                <input style="width:150px; type="text" id="suitablepeople" name="suitablepeople" placeholder="請輸入可容納的成員數">&nbsp;&nbsp;&nbsp;<label>人</label><br><br>
+
+                                
+                                <label style="width:95px;display:inline-block;color:black;font-size:16px">openTime</label>
+                                    <select id="openTime">
+                                         <option value="9:00AM" SELECTED>9:00AM</option>
+                                         <option value="10:00AM">10:00AM</option>
+                                         <option value="11:00AM">11:00AM</option>
+                                         <option value="12:00PM">12:00PM</option>
+                                         <option value="1:00PM">1:00PM</option>
+                                         <option value="2:00PM">2:00PM</option>
+                                         <option value="3:00PM">3:00PM</option>
+                                         <option value="4:00PM">4:00PM</option>
+                                         <option value="5:00PM">5:00PM</option>
+                                         <option value="6:00PM">6:00PM</option>
+                                         <option value="7:00PM">7:00PM</option>
+                                         <option value="8:00PM">8:00PM</option>
+                                         <option value="9:00PM">9:00PM</option>
+                                         <option value="10:00PM">10:00PM</option>
+                                         <option value="11:00PM">11:00PM</option>
+                                    </select> &nbsp;&nbsp;&nbsp;
+                               <label style="width:90px;display:inline-block;color:black;font-size:16px">closeTime</label>
+                                    <select id="closeTime">
+                                         <option value="9:00AM" >9:00AM</option>
+                                         <option value="10:00AM" SELECTED>10:00AM</option>
+                                         <option value="11:00AM">11:00AM</option>
+                                         <option value="12:00PM">12:00PM</option>
+                                         <option value="1:00PM">1:00PM</option>
+                                         <option value="2:00PM">2:00PM</option>
+                                         <option value="3:00PM">3:00PM</option>
+                                         <option value="4:00PM">4:00PM</option>
+                                         <option value="5:00PM">5:00PM</option>
+                                         <option value="6:00PM">6:00PM</option>
+                                         <option value="7:00PM">7:00PM</option>
+                                         <option value="8:00PM">8:00PM</option>
+                                         <option value="9:00PM">9:00PM</option>
+                                         <option value="10:00PM">10:00PM</option>
+                                         <option value="11:00PM">11:00PM</option>
+                                    </select><br><br>
+                                
+                                 <label style="width:100px;display:inline-block;color:black;font-size:16px">Ether </label>
+                                <input style="width:20%;" type="text" id="Ether" name="Ether" placeholder="請輸入Ether"><br>
+
+                                <hr width="40%" size="5" color="black" style="position:absolute;left:50px;"><br><br>
+                                <input style="position:absolute;left:520px" type='button' name='submit' value='Send' onclick='processFormData();' /><br>
+
+
+                            </form>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+		<!-- /Page -->
+
+		<!-- Copyright -->
+            <div id="copyright" class="container">
+               weilingpan2019
+            </div>
+
+
+	</body>
+</html>

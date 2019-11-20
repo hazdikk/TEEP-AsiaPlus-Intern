@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>NTUST × 空間租借</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+
+
+
+		<script>
+		    window.onload = function(){
+		        var prev = document.getElementById('prev');
+		        var next = document.getElementById('next');
+		        var txt1 = document.getElementById('txt1');
+		        var span1 = document.getElementById('span1');
+		        var img1 = document.getElementById('img1');
+
+		        var arrUrl = ['images/case1.jpg','images/case1_2.jpg'];
+		        // var arrTxt = ['海上帆船','粉色台灯','海边风景','照相机'];
+
+		        var num = 0;
+		        // 初始化显示内容
+		        function fnTab(){//重复的代码要用函数包起来
+		            span1.innerHTML = num+1 +'/' + arrUrl.length;// 1/4，因为计数是从1开始，所以num要加1
+		            img1.src = arrUrl[num];//动态获取数组中图片，先加载第一张图片，因为num是0
+		            // txt1.innerHTML = arrTxt[num];//动态获取数组中文字，先显示数组中第一个文字，因为num是0
+		        }
+		        fnTab();//调用函数，fnTab()代表执行函数里面的三行代码
+
+		        next.onclick = function(){
+		            num ++;//num自增1
+		            if(num == arrUrl.length){//如果num的值超过数组的长度
+		                num = 0;//恢复到第一张图片（数组中是从0 开始数）
+		            }               
+		            fnTab();// 然后相应加载的内容进行变动
+		        }
+		        prev.onclick = function(){
+		            num --;
+		            if(num == -1){
+		                num = arrUrl.length - 1;//如果图片已经在第一张，还点击上一张，那么让图片显示最后一张，即数组长度减1为数组最后一张图片
+		            }
+		            fnTab();
+		        }
+		    }
+
+
+		    function processFormData()
+            {
+    
+                const UserName = document.getElementById("UserName").value;
+				const date = document.getElementById("date").value;
+				const BeginingTime = document.getElementById("BeginingTime").value;
+				const EndingTime = document.getElementById("EndingTime").value;
+				const Purpose = document.getElementById("Purpose").value;
+				const Ether = document.getElementById("Ether").value;
+				var device = document.getElementsByName("device"); 
+				text = '';
+				    for(var i=0;i<device.length;i++){
+				         if(device[i].checked){
+				         	text = text + device[i].value + ',' ;
+				       }
+				    }   
+				text = text.substring(0, text.length-1);
+                window.alert(UserName + '\n' + date + '\n' + BeginingTime + '\n' + EndingTime + '\n' + Purpose
+                	+ '\n' + text + '\n' + Ether);
+
+                document.getElementById("UserName").value = "";
+                document.getElementById("date").value = "";
+                document.getElementById("BeginingTime").value = "14:20";
+                document.getElementById("EndingTime").value = "14:20";
+                document.getElementById("Purpose").value = "";
+                document.getElementById("Ether").value = "";
+                for(var i=0;i<device.length;i++){
+				         if(device[i].checked){
+				         	device[i].checked = false ;
+				       }
+				    }  
+                window.alert('已將租借資訊送出');
+    
+            }
+
+		</script>
+
+		<style>
+		    #content {
+		        width: 400px;
+		        height: 199px; 
+		        /*margin: 10px auto;          */
+		        position: relative;
+		    }
+		    #content a {
+		        width: 20px;
+		        height: 20px;
+		        background-color: #ccc;
+		        border: 2px solid #fff;
+		        text-align: center;
+		        text-decoration: none;
+		        font-size: 20px;
+		        font-weight: 700;
+		        filter: alpha(opacity: 60);/* 透明度兼容IE */
+		        opacity: 0.6;/* 兼容主流浏览器 */
+		        position: absolute;
+		        top: 80px;
+		    }
+		    #content a:hover {
+		        background-color: pink;
+		        filter: alpha(opacity: 90);/* 透明度兼容IE */
+		        opacity: 0.9;/* 兼容主流浏览器 */
+		    }
+		    #prev {left: -40px;}
+		    #next {right: 60px;}
+
+		    #txt1,#span1 {
+		        width: 112px;
+		        position: absolute;         
+		        left: 0;
+		        height: 25px;
+		        line-height: 25px;
+		        text-align: center;
+		        color: #fff;            
+		        background-color: #000;
+		        opacity: 0.5;
+		        margin-top: 100px;
+		    }
+		    #txt1 {bottom: 0;margin: 0;}
+
+
+
+		</style>
+
+
+
+	</head>
+	<body class="homepage">
+
+		<!-- Header -->
+		<div >
+		
+        	<div id="header" class="container">
+            
+            	<div id="case">
+            		<h1>Meeting Room</h1>
+            		<h2>永續屋</h2>
+            		<h3>臺北市大安區基隆路 4 段 43 號</h3>
+            	</div>
+            	
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="twocolumn1.html">search</a></li>
+                        <li><a href="twocolumn2.html">device</a></li>
+                        <li><a href="onecolumn.html">space</a></li>
+                        <li><a href="">登入</a></li>
+                    </ul>
+                </nav>
+                
+            </div>
+
+		</div>
+		<!-- Header Ends Here -->
+		<hr width="93%" style="">
+		<!-- Page -->
+        
+        	<div id="page">
+            	<div class="container">
+            		<div id="content" style="width:50%;float: left;">
+            			<div>
+            			<p style="width:86%;float: left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;台灣科技大學與日本德島縣合作，在校內建造「永續智慧校園資訊展示中心」，由日方捐贈木料、派專業師傅來台傳授榫接與材料處理技術，學生全程見習日式獨特木構建築技法。
+            			</p>
+
+					    <a href="javascript:;" id="prev"><</a>
+					    <a href="javascript:;" id="next">></a>
+					    <!-- <p id="txt1">正在加载中...</p> -->
+					    <span id="span1">數量正在計算中...</span>
+					    <img id='img1' width=500 style="">   
+						
+						</div>
+						
+					    <p style="font-size:20px;text-align:center;width:100px;margin-top:10px;border-width:3px;border-style:solid;border-color:#b5b0aa;padding:3px;">我要租借</p>
+	                    <div width=100px style="background-color:#e8eded;width:500px;margin-top:10px;float: left;">
+
+							<form style="margin-left:20px">
+
+								User Name:<br>
+								<input type="text" name="UserName" id="UserName"><br>
+								 Date:<br>
+								<input type="date" name="Date" id="date"><br>
+								Begining Time:<br>
+								<input type="time" value="14:20" name="BeginingTime" id="BeginingTime" /><br>
+								Ending Time:<br>
+								<input type="time" value="14:20" name="EndingTime" id="EndingTime" /><br>
+								Purpose:<br>
+								<textarea cols="50" rows="3" name="Purpose" id="Purpose"></textarea><br>
+								Device:<br>
+								
+									<input type="checkbox" value="投影機" name="device" id="device"> 投影機
+									<input type="checkbox" value="電腦" name="device" id="device"> 電腦
+									<input type="checkbox" value="白板" name="device" id="device"> 白板
+								<br>
+								Ether:<br>
+								<input type="text" name="Ether" id="Ether" size="35"><br><br>
+								
+
+								<input style="position:absolute;left:450px;margin-top:15px" type='button' name='submit' value='Send' onclick='processFormData();'/>
+
+							</form> 
+	               		</div>
+
+					</div>
+               		
+                    <div style="margin-top:15px;">
+                    
+                    	<p style="font-size:20px;">設備清單</p>
+						<ul style="list-style-type:circle;">
+							<li style="margin-left:15px;width: 100px;float:left;">投影機</li>
+							<li style="width: 100px;float:left;">白板</li>
+							<li style="width: 100px;float:left;">網際網路</li>
+						</ul><br>
+
+						<br>
+                		<iframe  style="" width='50%' height='750' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=臺北市大安區基隆路 4 段 43 號&z=16&output=embed&t='></iframe>
+                    </div>
+
+					<br>
+					
+					
+               		<br><br>
+             
+     
+				</div>
+
+                   
+            </div>
+
+            <hr>
+
+
+
+		<!-- /Page -->
+
+		<!-- Copyright -->
+
+            <div id="copyright" class="container">
+                weilingpan2019
+            </div>
+
+
+	</body>
+</html>
